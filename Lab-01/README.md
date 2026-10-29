@@ -1,73 +1,63 @@
 # Lab 1: Node.js and Express Server
 
 ## Student Details
-- **Name:** Sambu Bhavishya
-- **Registration Number:** YOUR_REGISTRATION_NUMBER
-- **Section:** 223 (CSE-2E)
-- **Course:** Backend Development Fundamentals
-- **Faculty:** Joel Prashanth D
 
-## Live Link
-https://bhavishya-lab01-express.onrender.com
+- **Name:** Sambu Bhavishya
+- **Section:** 223 (CSE-2E)
+- **Registration Number:252U1R1224
 
 ## Objective
-To create a web server using Node.js and Express.js, implement GET routes, return text and JSON responses, and handle unknown routes with the correct HTTP status code.
+
+To understand Node.js, create a basic HTTP server, build an Express server, handle GET requests, return JSON responses, and handle unknown routes using a 404 status code.
 
 ## Technologies Used
+
 - Node.js
 - Express.js
 - JavaScript
-- npm
+- Git and GitHub
+- Render
 
-## How to Install and Run
+## Project Structure
+
+- `plain-server.js` — Basic Node.js HTTP server
+- `server.js` — Express server and routes
+- `package.json` — Project dependencies and scripts
+- `screenshots/` — Screenshots of the working endpoints
+
+## Setup and Run
 
 1. Install Node.js.
-2. Clone the GitHub repository.
-3. Open a terminal in the `Lab-01` directory.
-4. Install dependencies:
-
+2. Open the `Lab-01` folder in a terminal.
+3. Install dependencies:
    `npm install`
-
-5. Start the server:
-
+4. Start the server:
    `npm start`
+5. Open `http://localhost:3000` in your browser.
 
-6. Open `http://localhost:3000` in your browser.
+## API Endpoints
 
-**Environment variables:** No environment variables are required for local development.
+| Method | Endpoint   | Expected response             |
+| ------ | ---------- | ----------------------------- |
+| GET    | `/`        | Welcome message               |
+| GET    | `/about`   | Student information in JSON   |
+| GET    | `/time`    | Current date and time in JSON |
+| GET    | `/unknown` | 404 - Route not found         |
 
-## Endpoints
+## Live Deployment
 
-| Method | Path | Description | Expected Status |
-|---|---|---|---|
-| GET | `/` | Displays the welcome message | 200 |
-| GET | `/about` | Returns student name and section as JSON | 200 |
-| GET | `/time` | Returns the current date and time as JSON | 200 |
-| GET | `/unknown` | Handles an unknown route | 404 |
+[https://bhavishya-lab01-express.onrender.com/](https://bhavishya-lab01-express.onrender.com/)
 
 ## Screenshots
 
-Screenshots will be added in the `screenshots/` folder.
-
-### Home Route
-![Home route](screenshots/home.png)
-
-### About Route
-![About route](screenshots/about.png)
-
-### Time Route
-![Time route](screenshots/time.png)
-
-### Unknown Route
-![404 route](screenshots/not-found.png)
-
-## Problems Faced and Solutions
-- Initially, the server start command failed because the project configuration was not in the correct folder.
-- Created the required `package.json` inside `Lab-01`, installed Express, and configured the start script.
+- Home: `screenshots/homee.png`
+- About: `screenshots/about.png`
+- Time: `screenshots/time.png`
+- 404 Error: `screenshots/Error.png`
 
 ## Learning Outcomes
-- Learned to create a Node.js project.
-- Understood the difference between Node.js HTTP and Express.js.
-- Implemented GET routes and JSON responses.
-- Handled unknown routes using HTTP status code 404.
-- Tested HTTP status codes and deployed the server online.
+
+- Understood Node.js and Express basics.
+- Created GET routes and returned text and JSON responses.
+- Used HTTP status codes, including 200 and 404.
+- Deployed an Express application using Render.
