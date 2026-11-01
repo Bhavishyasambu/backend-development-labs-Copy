@@ -46,7 +46,7 @@ To understand Node.js, create a basic HTTP server, build an Express server, hand
 
 ## Live Deployment
 
-[https://bhavishya-lab01-express.onrender.com/](https://bhavishya-lab01-express.onrender.com/)
+https://bhavishya-lab01-express.onrender.com
 
 ## Screenshots
 
