@@ -10,9 +10,7 @@
 
 ## Live Application URL
 
-**Status:** Not deployed yet. The application is currently running locally at:
-
-`http://localhost:3000`
+Render URL: https://backend-lab-02-zjii.onrender.com
 
 ## 1. Objective
 

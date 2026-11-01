@@ -14,6 +14,24 @@ let db = null;
 
 const PORT = process.env.PORT || 3000;
 
+// Homepage route
+app.get("/", (request, response) => {
+  response.status(200).send(`
+    <h1>Books Management API</h1>
+    <p>Welcome to the Books Management System!</p>
+    <p>Server is running successfully.</p>
+
+    <h3>Available API Endpoints</h3>
+    <ul>
+      <li>GET /books/ - Get all books</li>
+      <li>GET /books/:bookId/ - Get a book by ID</li>
+      <li>POST /books/ - Add a new book</li>
+      <li>PUT /books/:bookId/ - Update a book</li>
+      <li>DELETE /books/:bookId/ - Delete a book</li>
+    </ul>
+  `);
+});
+
 // Initialize database and start server
 const initializeDBAndServer = async () => {
   try {
@@ -58,7 +76,9 @@ const initializeDBAndServer = async () => {
         );
 
         if (book === undefined) {
-          return response.status(404).send({ message: "Book not found" });
+          return response.status(404).send({
+            message: "Book not found",
+          });
         }
 
         response.status(200).send(book);
@@ -92,7 +112,9 @@ const initializeDBAndServer = async () => {
 
         await db.run(query, [title, author, price, pages]);
 
-        response.status(201).send({ message: "Book added successfully" });
+        response.status(201).send({
+          message: "Book added successfully",
+        });
       } catch (error) {
         response.status(500).send({ error: error.message });
       }
@@ -132,10 +154,14 @@ const initializeDBAndServer = async () => {
         ]);
 
         if (result.changes === 0) {
-          return response.status(404).send({ message: "Book not found" });
+          return response.status(404).send({
+            message: "Book not found",
+          });
         }
 
-        response.status(200).send({ message: "Book updated successfully" });
+        response.status(200).send({
+          message: "Book updated successfully",
+        });
       } catch (error) {
         response.status(500).send({ error: error.message });
       }
@@ -152,19 +178,24 @@ const initializeDBAndServer = async () => {
         );
 
         if (result.changes === 0) {
-          return response.status(404).send({ message: "Book not found" });
+          return response.status(404).send({
+            message: "Book not found",
+          });
         }
 
-        response.status(200).send({ message: "Book deleted successfully" });
+        response.status(200).send({
+          message: "Book deleted successfully",
+        });
       } catch (error) {
         response.status(500).send({ error: error.message });
       }
     });
 
-    // Start server only after database connection succeeds
+    // Start server after database connection succeeds
     app.listen(PORT, () => {
       console.log(`Server running at http://localhost:${PORT}`);
     });
+
   } catch (error) {
     console.error(`Database Error: ${error.message}`);
     process.exit(1);
